@@ -1,0 +1,36 @@
+nav {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 12vh;
+    border-bottom: 2px solid black;
+}
+
+.logo {
+    z-index: 1;
+    display: flex;
+}
+
+.logo img:hover {
+    transition: ease 0.5s;
+    scale: 1.1;
+}
+
+.search-icon {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+nav a  {
+    width: auto;
+    height: 100%;
+}
+
+.search-text {
+    margin-left: 5px;
+    margin-bottom: 5px;
+}

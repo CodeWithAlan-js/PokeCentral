@@ -1,0 +1,191 @@
+.choice-container {
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border-radius: 20px 20px 0 0;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  overflow-y: auto;
+  
+}
+
+
+.visible {
+  animation-name: bottomToTop;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+
+.select-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.button-select {
+  background-color: white;
+  border: 1px solid gray;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.button-start {
+  background-color: white;
+  border: 1px solid gray;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  transition-duration: 0.3s;
+  cursor: pointer;
+  animation: bounce 1s infinite;
+}
+
+.button-select:hover {
+  scale: 1.1;
+}
+
+.button-reset {
+  cursor: pointer;
+  background: transparent;
+  transition: ease 0.3s;
+}
+
+.button-reset:hover {
+  scale: 1.2;
+}
+
+.question-mark {
+  animation: bounce 1s infinite;
+  font-size: 3rem;
+}
+
+.pokemon1 {
+  transform: scaleX(-1);
+}
+
+.pokemons-container {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  perspective: 500px;
+  width: 100%;
+}
+
+.icon-poke {
+  position: relative;
+  z-index: -1;
+  transform: rotateX(65deg) rotateY(0deg);
+  transform-style: preserve-3d;
+  opacity: 0.5;
+  margin-top: -70px;
+}
+
+
+
+.pokemon-animation-1 {
+  animation-name: movePokemon1;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.pokemon-animation-2 {
+  animation-name: movePokemon2;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.disabled-button {
+  display: none;
+}
+
+@keyframes bottomToTop {
+  from {
+    bottom: -100%;
+  }
+  to {
+    bottom: 0;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes movePokemon1 {
+  0% {
+    transform: translateX(0%) scaleX(-1);
+  }
+
+  60% {
+    transform: translateX(60%) scaleX(-1);
+    scale: 1.1;
+  }
+
+  70% {
+    transform: translateX(0%) scaleX(-1);
+    scale: 1.2;
+  }
+
+  80% {
+    transform: translateX(60%) scaleX(-1);
+    scale: 1.1;
+  }
+
+  100% {
+    transform: translateX(0%) scaleX(-1);
+    scale: 1;
+  }
+}
+
+@keyframes movePokemon2 {
+  0% {
+    transform: translateX(0%);
+  }
+  
+  60% {
+    transform: translateX(-60%);
+    scale: 1.1;
+  }
+
+  70% {
+    transform: translateX(0%);
+    scale: 1.2;
+  }
+
+  80% {
+    transform: translateX(-60%);
+    scale: 1.2;
+  }
+  100% {
+    transform: translateX(0%);
+    scale: 1;
+  }
+}

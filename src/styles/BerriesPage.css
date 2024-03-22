@@ -1,0 +1,16 @@
+.berries-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 12vh;
+    max-width: 100vw;
+}
+
+.berries-page-container h2 {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 2rem;
+    gap: 10px;
+}

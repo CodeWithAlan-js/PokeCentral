@@ -1,0 +1,47 @@
+.stats-container {
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-radius: 20px 20px 0 0;
+    
+}
+
+.stats-text-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    position: relative;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.stat-num{
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+
+.test {
+    width: 80%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.stat-text {
+    display: flex;
+    text-align: left;
+}
+
+

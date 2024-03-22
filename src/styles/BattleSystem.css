@@ -1,0 +1,53 @@
+.battle-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.battle-container h3 {
+    margin-bottom: 2vh;
+}
+
+
+.battle-container ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+}
+
+.battle-container li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    text-align: center;
+}
+
+.winner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: appaer 1s;
+}
+
+.equallity-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: appaer 1s;
+}
+
+@keyframes appaer {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}

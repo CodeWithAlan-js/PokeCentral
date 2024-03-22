@@ -1,0 +1,78 @@
+.evolution-container {
+    min-height: 50vh;
+  width: 100vw;
+  color: black;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.cards-header {
+    margin-top: 15px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.close-button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    position: absolute;
+    left: 40px;
+}
+
+.header-title {
+    font-size: 1.4rem;
+    position: absolute;
+    right: 40px;
+}
+
+.evolution-name {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+
+.evolution-details-list span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ul-evolution{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0;
+    align-items: baseline;
+    margin: auto;
+    
+}
+
+.li-evolution  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.bold-text {
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+.no-evolution-message {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    font-size: large;
+}

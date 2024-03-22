@@ -1,0 +1,26 @@
+.search-select {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-select input {
+    padding: 10px;
+    padding-right: 30px;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    background-image: url('src/assets/Poké_Ball_icon.svg.png');
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: right ;
+}
+
+.no-result-text {
+    margin-top: 5vh;
+}
+
+.input-search-text {
+    margin-bottom: 2vh;
+}

@@ -1,0 +1,26 @@
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    padding-top: 12vh;
+    min-height: 100vh;
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.pagination-container {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+}
+

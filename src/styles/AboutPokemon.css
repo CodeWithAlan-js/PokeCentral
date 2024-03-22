@@ -1,0 +1,80 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+
+
+.about-container {
+    position: relative;
+    height: 50vh;
+    width: 100vw;
+    color: black;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.cards-header {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.close-button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    transition: ease 0.3s;
+}
+
+.close-button:hover {
+    scale: 1.2;
+}
+
+.header-title {
+    font-size: 1.4rem;
+    position: absolute;
+    right: 40px;
+}
+
+.about-list {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.2rem;
+}
+
+.li-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+.type-container{
+    display: flex;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid white;
+    gap: 10px
+}
+
+.type-container:first-child{
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+
+.bold {
+    font-weight: 500;
+    font-family: "Oswald", sans-serif;
+    margin-left: 5px;
+}
