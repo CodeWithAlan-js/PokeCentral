@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "@styles/EvolutionPokemon.css";
 import { capitalizeFirstLetter } from "../../helpers/utils";
 import { useEvolutionContext } from "../context/evolutionContext";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { MutatingDots } from "react-loader-spinner";
+import { getPokemonImageUrl } from "../../services/imageUrlApi";
 
-const EvolutionPokemon = (props) => {
+const EvolutionPokemon = ({ selectedPokemon, handleClick }) => {
   const {
     evolutionData,
     setEvolutionData,
@@ -13,7 +14,6 @@ const EvolutionPokemon = (props) => {
     hasEvolutionData,
     loading,
   } = useEvolutionContext();
-  const { selectedPokemon } = props;
   const [prevSelectedPokemon, setPrevSelectedPokemon] = useState(null);
 
   useEffect(() => {
@@ -29,20 +29,11 @@ const EvolutionPokemon = (props) => {
     setEvolutionData,
   ]);
 
-  const getPokemonImageUrl = (url) => {
-    const pokemonId = url.split("/").reverse()[1];
-    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/${pokemonId}.gif`;
-  };
-
   return (
     <div className="evolution-container">
       <div className="cards-header">
         <div className="close-container">
-          <button
-            className="close-button"
-            type="button"
-            onClick={props.onClick}
-          >
+          <button className="close-button" type="button" onClick={handleClick}>
             <IoCloseCircleOutline size={35} />
           </button>
         </div>

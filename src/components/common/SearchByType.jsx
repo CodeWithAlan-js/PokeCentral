@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import "@styles/SearchByType.css";
 import { types, capitalizeFirstLetter } from "../../helpers/utils";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import { MutatingDots } from "react-loader-spinner";
+import { searchByTypeApi } from "../../services/searchByTypeApi";
 
 const SearchByType = () => {
   const [selectedTypes, setSelectedTypes] = useState([]);
@@ -34,19 +34,7 @@ const SearchByType = () => {
 
       try {
         const allPokemonData = await Promise.all(
-          selectedTypes.map(async (type) => {
-            const response = await axios.get(
-              `https://pokeapi.co/api/v2/type/${type}`
-            );
-            const pokemonUrls = response.data.pokemon.map(
-              (pokemon) => pokemon.pokemon.url
-            );
-            const pokemonDataPromises = pokemonUrls.map(async (pokemonUrl) => {
-              const pokemonResponse = await axios.get(pokemonUrl);
-              return pokemonResponse.data;
-            });
-            return Promise.all(pokemonDataPromises);
-          })
+          selectedTypes.map((type) => searchByTypeApi(type))
         );
 
         const mergedPokemonData = allPokemonData

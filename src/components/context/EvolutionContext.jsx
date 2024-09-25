@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect, useContext } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 import axios from "axios";
 
 export const EvolutionContext = createContext();
@@ -40,13 +40,11 @@ export const EvolutionProvider = ({ children }) => {
             const evolution = {
               name: link.species.name,
               url: link.species.url,
-              details: link.evolution_details
+              details: link.evolution_details,
             };
             evolutions.push(evolution);
             if (link.evolves_to.length > 0) {
-              link.evolves_to.forEach((evolvesTo) =>
-                processChain(evolvesTo)
-              );
+              link.evolves_to.forEach((evolvesTo) => processChain(evolvesTo));
             }
           };
           processChain(chain);
@@ -57,7 +55,6 @@ export const EvolutionProvider = ({ children }) => {
 
         setEvolutionData(allEvolutions);
         setLoading(false);
-
       } catch (error) {
         console.error("Error fetching evolution data:", error);
         setError(error);
@@ -73,7 +70,16 @@ export const EvolutionProvider = ({ children }) => {
   };
 
   return (
-    <EvolutionContext.Provider value={{ evolutionData,setEvolutionData, selectedPokemon, setSelectedPokemon, loading, hasEvolutionData }}>
+    <EvolutionContext.Provider
+      value={{
+        evolutionData,
+        setEvolutionData,
+        selectedPokemon,
+        setSelectedPokemon,
+        loading,
+        hasEvolutionData,
+      }}
+    >
       {children}
     </EvolutionContext.Provider>
   );

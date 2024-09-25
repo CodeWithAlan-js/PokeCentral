@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useCallIdContext } from "../components/context/idContext.jsx";
@@ -144,19 +144,19 @@ const PokemonCards = () => {
       {visibleComponent === "about" && (
         <AboutPokemon
           selectedPokemon={selectedPokemon}
-          onClick={() => toggleVisibility("details")}
+          handleClick={() => toggleVisibility("details")}
         />
       )}
       {visibleComponent === "stats" && (
         <StatsPokemon
           selectedPokemon={selectedPokemon}
-          onClick={() => toggleVisibility("details")}
+          handleClick={() => toggleVisibility("details")}
         />
       )}
       {visibleComponent === "evolution" && (
         <EvolutionPokemon
           selectedPokemon={selectedPokemon}
-          onClick={() => toggleVisibility("details")}
+          handleClick={() => toggleVisibility("details")}
         />
       )}
       {visibleComponent === "details" && (

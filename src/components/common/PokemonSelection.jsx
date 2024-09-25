@@ -1,4 +1,3 @@
-import React from "react";
 import { usePokemonPaginationContext } from "../context/paginationContext";
 import Pagination from "./pagination";
 import "@styles/PokemonSelection.css";

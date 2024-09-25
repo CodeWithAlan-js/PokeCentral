@@ -2,9 +2,7 @@ import PokemonStatBar from "../layout/pokemonStatBar";
 import "@styles/StatsPokemon.css";
 import { IoCloseCircleOutline } from "react-icons/io5";
 
-const StatsPokemon = (props) => {
-  const { selectedPokemon } = props;
-
+const StatsPokemon = ({ selectedPokemon, handleClick }) => {
   const maxValue = 200;
 
   const stats = selectedPokemon.stats.reduce((accumulator, stat) => {
@@ -17,11 +15,7 @@ const StatsPokemon = (props) => {
     <div className="stats-container">
       <div className="cards-header">
         <div className="close-container">
-          <button
-            className="close-button"
-            type="button"
-            onClick={props.onClick}
-          >
+          <button className="close-button" type="button" onClick={handleClick}>
             <IoCloseCircleOutline size={35} />
           </button>
         </div>

@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect, useState } from "react";
 import { capitalizeFirstLetter } from "../../helpers/utils";
 import "@styles/SearchBarSelectPokemon.css";
 import { useBattleContext } from "../context/battleContext";
 import { FaCheckCircle } from "react-icons/fa";
 import { MutatingDots } from "react-loader-spinner";
+import { searchPokemonApi } from "../../services/searchPokemonApi";
 
-const SearchBarSelectPokemon = ({}) => {
+const SearchBarSelectPokemon = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -24,10 +24,8 @@ const SearchBarSelectPokemon = ({}) => {
       setError(null);
 
       try {
-        const response = await axios.get(
-          `https://pokeapi.co/api/v2/pokemon/${searchTerm.toLowerCase()}`
-        );
-        setSearchResults([response.data]);
+        const response = await searchPokemonApi(searchTerm);
+        setSearchResults([response]);
       } catch (error) {
         setError("Error fetching data");
       } finally {
@@ -64,6 +62,7 @@ const SearchBarSelectPokemon = ({}) => {
       {searchResults.length === 0 && (
         <p className="no-result-text">No results found</p>
       )}
+      {error && <p className="error-text">{error}</p>}
       <ul>
         {searchResults.map((pokemon) => (
           <li key={pokemon.id} onClick={() => handleSelectedPokemons(pokemon)}>

@@ -1,9 +1,6 @@
-import React from "react";
 import BerriesDetails from "../components/common/berriesDetails";
 import "@styles/BerriesPage.css";
 import NavBar from "../components/common/navBar";
-import { Link } from "react-router-dom";
-import { IoCloseCircleOutline } from "react-icons/io5";
 
 const BerriesPage = () => {
   return (

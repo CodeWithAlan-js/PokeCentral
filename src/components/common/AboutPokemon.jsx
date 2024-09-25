@@ -1,4 +1,3 @@
-import React from "react";
 import "@styles/AboutPokemon.css";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import {
@@ -10,18 +9,12 @@ import {
   typeIcons,
 } from "../../helpers/utils";
 
-const AboutPokemon = (props) => {
-  const { selectedPokemon } = props;
-
+const AboutPokemon = ({ selectedPokemon, handleClick }) => {
   return (
     <div className="about-container">
       <div className="cards-header">
         <div className="close-container">
-          <button
-            className="close-button"
-            type="button"
-            onClick={props.onClick}
-          >
+          <button className="close-button" type="button" onClick={handleClick}>
             <IoCloseCircleOutline size={35} />
           </button>
         </div>

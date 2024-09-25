@@ -1,4 +1,3 @@
-import React from "react";
 import BattleSystem from "../components/common/battleSystem";
 import "@styles/PokemonBattlePage.css";
 import NavBar from "../components/common/navBar";

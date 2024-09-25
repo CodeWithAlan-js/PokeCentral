@@ -1,4 +1,3 @@
-import React from "react";
 import HomeCards from "../components/common/homeCards.jsx";
 import NavBar from "../components/common/navBar.jsx";
 import "@styles/HomePage.css";

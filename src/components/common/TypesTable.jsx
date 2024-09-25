@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import "@styles/TypesTable.css";
 import { typeColors, capitalizeFirstLetter } from "../../helpers/utils";
 import { MutatingDots } from "react-loader-spinner";
+import { allTypesApi } from "../../services/typesApi";
 
 const TypesTable = () => {
   const [types, setTypes] = useState([]);
@@ -11,14 +11,7 @@ const TypesTable = () => {
   useEffect(() => {
     const fetchTypes = async () => {
       setLoading(true);
-      const response = await axios.get("https://pokeapi.co/api/v2/type");
-      const data = response.data.results;
-      const typeData = await Promise.all(
-        data.map(async (type) => {
-          const response = await axios.get(type.url);
-          return response.data;
-        })
-      );
+      const typeData = await allTypesApi();
       setLoading(false);
       setTypes(typeData);
     };

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "@styles/SelectPokemonBattle.css";
 import PokemonSelection from "./pokemonSelection";
 import { TbPokeball } from "react-icons/tb";

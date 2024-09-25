@@ -1,6 +1,5 @@
-import React from "react";
 import NavBar from "../components/common/navBar";
-import TypesTable from "../components/common/typesTable";
+import TypesTable from "../components/common/TypesTable";
 import "@styles/TypeTablePage.css";
 
 const TypeTablePage = () => {

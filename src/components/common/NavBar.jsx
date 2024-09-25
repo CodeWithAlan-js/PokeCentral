@@ -1,4 +1,3 @@
-import React from "react";
 import "@styles/NavBar.css";
 import HamburgerMenu from "./hamburgerMenu";
 import { Link } from "react-router-dom";
