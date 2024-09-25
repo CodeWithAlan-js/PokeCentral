@@ -8,7 +8,7 @@ import {
   formatPokemonId,
   typeColors,
   typeIcons,
-} from "../layout/Utils.jsx";
+} from "../../helpers/utils";
 
 const AboutPokemon = (props) => {
   const { selectedPokemon } = props;

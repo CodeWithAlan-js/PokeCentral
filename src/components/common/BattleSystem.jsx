@@ -1,16 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { PokemonBattleApi } from "../../services/PokemonBattleApi";
+import { useState, useEffect } from "react";
+import { PokemonBattleApi } from "../../services/pokemonBattleApi";
 import "@styles/BattleSystem.css";
-import SelectPokemonBattle from "./SelectPokemonBattle";
-import { useBattleContext } from "../context/BattleContext";
-import { capitalizeFirstLetter } from "../layout/Utils";
-import { Link } from "react-router-dom";
-import { useCallIdContext } from "../context/IdContext";
+import SelectPokemonBattle from "./selectPokemonBattle";
+import { useBattleContext } from "../context/battleContext";
+import { capitalizeFirstLetter } from "../../helpers/utils";
 
 const BattleSystem = () => {
-  const { equallity, winner, } = useBattleContext();
+  const { equallity, winner } = useBattleContext();
   const [pokemonData, setPokemonData] = useState([]);
-
 
   useEffect(() => {
     const fetchPokemonData = async () => {
@@ -24,13 +21,10 @@ const BattleSystem = () => {
     fetchPokemonData();
   }, []);
 
-
   return (
     <div className="battle-container">
-      <SelectPokemonBattle
-        pokemonData={pokemonData}
-      />
-     
+      <SelectPokemonBattle pokemonData={pokemonData} />
+
       {winner && (
         <div className="winner-container">
           <h2>The winner is:</h2>
@@ -45,12 +39,11 @@ const BattleSystem = () => {
           <p>{capitalizeFirstLetter(winner.name)}</p>
         </div>
       )}
-      {equallity &&(
+      {equallity && (
         <div className="equallity-container">
-          
-        <h2>The battle is a draw!</h2>
+          <h2>The battle is a draw!</h2>
         </div>
-        )}
+      )}
     </div>
   );
 };

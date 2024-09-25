@@ -6,15 +6,11 @@ import {
   MdLastPage,
 } from "react-icons/md";
 import "@styles/Pagination.css";
-import { usePokemonPaginationContext } from "../context/PaginationContext";
+import { usePokemonPaginationContext } from "../context/paginationContext";
 
 const Pagination = () => {
-  const {
-    currentPage,
-    totalPages,
-    setCurrentPage,
-    loading,
-  } = usePokemonPaginationContext();
+  const { currentPage, totalPages, setCurrentPage, loading } =
+    usePokemonPaginationContext();
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
@@ -43,26 +39,26 @@ const Pagination = () => {
   return (
     <div className="pagination">
       <MdFirstPage
-      className="icon-pagination"
+        className="icon-pagination"
         onClick={() => handlePageChange(1)}
         disabled={currentPage === 1 || loading}
         size={40}
       />
       <MdNavigateBefore
-      className="icon-pagination"
+        className="icon-pagination"
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1 || loading}
         size={40}
       />
       {renderPaginationButtons()}
       <MdNavigateNext
-      className="icon-pagination"
+        className="icon-pagination"
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === totalPages || loading}
         size={40}
       />
       <MdLastPage
-      className="icon-pagination"
+        className="icon-pagination"
         onClick={() => handlePageChange(totalPages)}
         disabled={currentPage === totalPages || loading}
         size={40}

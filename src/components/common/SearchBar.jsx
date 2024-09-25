@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import "@styles/SearchBar.css"
-import { capitalizeFirstLetter } from "../layout/Utils";
+import { capitalizeFirstLetter } from "../../helpers/utils";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { MutatingDots } from "react-loader-spinner";

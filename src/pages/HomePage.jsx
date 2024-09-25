@@ -1,10 +1,10 @@
 import React from "react";
-import HomeCards from "../components/common/HomeCards.jsx";
-import NavBar from "../components/common/NavBar";
+import HomeCards from "../components/common/homeCards.jsx";
+import NavBar from "../components/common/navBar.jsx";
 import "@styles/HomePage.css";
-import { usePokemonPaginationContext } from "../components/context/PaginationContext";
+import { usePokemonPaginationContext } from "../components/context/paginationContext.jsx";
 import { MutatingDots } from "react-loader-spinner";
-import Pagination from "../components/common/Pagination";
+import Pagination from "../components/common/pagination.jsx";
 
 const HomePage = () => {
   const { pokemonData, loading } = usePokemonPaginationContext();
@@ -25,13 +25,12 @@ const HomePage = () => {
             />
           </div>
         ) : (
-            <>
+          <>
             <HomeCards pokemonData={pokemonData} />
             <div className="pagination-container">
               <Pagination />
-
             </div>
-            </>
+          </>
         )}
       </main>
     </>

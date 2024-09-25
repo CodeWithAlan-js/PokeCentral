@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { playSound } from "../layout/Utils";
+import { playSound } from "../../helpers/utils";
 
 const BattleContext = React.createContext();
 
@@ -18,7 +18,7 @@ export const BattleProvider = ({ children }) => {
   }
 
   const handleSelectedPokemons = (pokemon) => {
-    setIsSelected(true)
+    setIsSelected(true);
     setSelectedPokemons([...selectedPokemons, pokemon]);
     setPokemonAnimations([...pokemonAnimations, false]);
     playSound(pokemon.cries.latest);
@@ -40,7 +40,7 @@ export const BattleProvider = ({ children }) => {
         return selectedPokemons[1];
       } else {
         setEquallity(true);
-        return null; 
+        return null;
       }
     }
     return null;
@@ -59,7 +59,7 @@ export const BattleProvider = ({ children }) => {
     setEquallity(false);
     setSelectedPokemons([]);
     setWinner(null);
-    setPokemonAnimations([]); 
+    setPokemonAnimations([]);
   };
 
   return (
@@ -75,7 +75,7 @@ export const BattleProvider = ({ children }) => {
         isBattleInProgress,
         pokemonAnimations,
         equallity,
-        isSelected
+        isSelected,
       }}
     >
       {children}

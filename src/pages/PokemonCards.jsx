@@ -1,24 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { useCallIdContext } from "../components/context/IdContext.jsx";
+import { useCallIdContext } from "../components/context/idContext.jsx";
 import "@styles/PokemonCards.css";
-import AboutPokemon from "../components/common/AboutPokemon.jsx";
-import StatsPokemon from "../components/common/StatsPokemon.jsx";
-import EvolutionPokemon from "../components/common/EvolutionPokemon.jsx";
+import AboutPokemon from "../components/common/aboutPokemon.jsx";
+import StatsPokemon from "../components/common/statsPokemon.jsx";
+import EvolutionPokemon from "../components/common/evolutionPokemon.jsx";
 import {
   typeColors,
   capitalizeFirstLetter,
   formatPokemonId,
   typeIcons,
   playSound,
-} from "/src/components/layout/Utils.jsx";
+} from "../helpers/utils.jsx";
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { AiOutlineSound } from "react-icons/ai";
 import { MutatingDots } from "react-loader-spinner";
-
-
 
 const PokemonCards = () => {
   const { id } = useParams();
@@ -40,7 +38,6 @@ const PokemonCards = () => {
     fetchPokemonDetails();
   }, [id, getPokemonDetailsById]);
 
-
   if (!selectedPokemon) {
     return (
       <div className="loader-container">
@@ -50,7 +47,7 @@ const PokemonCards = () => {
           radius="9"
           color="green"
           ariaLabel="three-dots-loading"
-          wrapperStyle={{ textAlign: 'center' }}
+          wrapperStyle={{ textAlign: "center" }}
         />
       </div>
     );
@@ -59,7 +56,7 @@ const PokemonCards = () => {
   const pokemonImages = [
     selectedPokemon.sprites.other["official-artwork"].front_default,
     selectedPokemon.sprites.other["official-artwork"].front_shiny,
-  ].filter(image => image !== null);
+  ].filter((image) => image !== null);
 
   const pokemonTypes = selectedPokemon.types.map((type) => ({
     name: capitalizeFirstLetter(type.type.name),
@@ -94,10 +91,9 @@ const PokemonCards = () => {
 
   const handlePlaySound = () => {
     playSound(selectedPokemon.cries.latest);
-  }
+  };
 
   const showNavButtons = pokemonImages.length > 1;
-
 
   return (
     <div className="card-container" style={detailsBackgroundStyle}>
@@ -120,13 +116,19 @@ const PokemonCards = () => {
               {typeIcons[selectedPokemon.types[0].type.name]}
             </div>
           )}
-         {showNavButtons && (
+          {showNavButtons && (
             <>
-              <button className="nav-button prev-button" onClick={handlePrevImage}>
+              <button
+                className="nav-button prev-button"
+                onClick={handlePrevImage}
+              >
                 <MdNavigateBefore size={60} color="white" />
               </button>
               <img src={pokemonImages[imageIndex]} alt={selectedPokemon.name} />
-              <button className="nav-button next-button" onClick={handleNextImage}>
+              <button
+                className="nav-button next-button"
+                onClick={handleNextImage}
+              >
                 <MdNavigateNext size={60} color="white" />
               </button>
             </>
@@ -135,10 +137,9 @@ const PokemonCards = () => {
             <img src={pokemonImages[imageIndex]} alt={selectedPokemon.name} />
           )}
         </div>
-          <button onClick={handlePlaySound} className="sound-button">
-          <AiOutlineSound color="white" size={60}/>
-
-          </button>
+        <button onClick={handlePlaySound} className="sound-button">
+          <AiOutlineSound color="white" size={60} />
+        </button>
       </div>
       {visibleComponent === "about" && (
         <AboutPokemon

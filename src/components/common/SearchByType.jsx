@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "@styles/SearchByType.css";
-import { types, capitalizeFirstLetter } from "../layout/Utils";
+import { types, capitalizeFirstLetter } from "../../helpers/utils";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { MutatingDots } from "react-loader-spinner";
@@ -98,18 +98,21 @@ const SearchByType = () => {
       {error && <p>{error}</p>}
       <div className="result-container">
         <h4>Resulting Pokémon:</h4>
-      {loading && 
-         <div className="loader-container">
-         <MutatingDots
-           height="80"
-           width="80"
-           radius="9"
-           color="green"
-           ariaLabel="three-dots-loading"
-           wrapperStyle={{ textAlign: 'center' }}
-         />
-         </div>}
-        {pokemons.length === 0 && !loading && <p className="no-pokemon-found">No Pokémon found</p>}
+        {loading && (
+          <div className="loader-container">
+            <MutatingDots
+              height="80"
+              width="80"
+              radius="9"
+              color="green"
+              ariaLabel="three-dots-loading"
+              wrapperStyle={{ textAlign: "center" }}
+            />
+          </div>
+        )}
+        {pokemons.length === 0 && !loading && (
+          <p className="no-pokemon-found">No Pokémon found</p>
+        )}
         <ul className="ul-pokemon-list">
           {pokemons.map((pokemon) => (
             <li className="li-pokemon-list" key={pokemon.id}>

@@ -1,19 +1,17 @@
 import React from "react";
-import { usePokemonPaginationContext } from "../context/PaginationContext";
-import Pagination from "./Pagination";
+import { usePokemonPaginationContext } from "../context/paginationContext";
+import Pagination from "./pagination";
 import "@styles/PokemonSelection.css";
-import { capitalizeFirstLetter, playSound } from "../layout/Utils";
+import { capitalizeFirstLetter } from "../../helpers/utils";
 import { MutatingDots } from "react-loader-spinner";
-import { useBattleContext } from "../context/BattleContext";
+import { useBattleContext } from "../context/battleContext";
 import { FaCheckCircle } from "react-icons/fa";
-import SearchBarSelectPokemon from "./SearchBarSelectPokemon";
+import SearchBarSelectPokemon from "./searchBarSelectPokemon";
 
 const PokemonSelection = () => {
-  const { handleSelectedPokemons, selectedPokemons } =
-    useBattleContext();
+  const { handleSelectedPokemons, selectedPokemons } = useBattleContext();
   const { loading, pokemonData, currentPage, totalPages, setCurrentPage } =
     usePokemonPaginationContext();
-
 
   return (
     <div className="selection-container">

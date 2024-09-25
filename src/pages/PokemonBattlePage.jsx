@@ -1,7 +1,7 @@
 import React from "react";
-import BattleSystem from "../components/common/BattleSystem";
+import BattleSystem from "../components/common/battleSystem";
 import "@styles/PokemonBattlePage.css";
-import NavBar from "../components/common/NavBar";
+import NavBar from "../components/common/navBar";
 
 const PokemonBattlePage = () => {
   return (

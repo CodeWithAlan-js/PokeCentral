@@ -1,6 +1,10 @@
-import React, { useState } from "react";
-import { usePokemonPaginationContext } from "../context/PaginationContext";
-import { formatPokemonId, capitalizeFirstLetter, typeColors } from "../layout/Utils";
+import { useState } from "react";
+import { usePokemonPaginationContext } from "../context/paginationContext";
+import {
+  formatPokemonId,
+  capitalizeFirstLetter,
+  typeColors,
+} from "../../helpers/utils";
 import "@styles/HomeCards.css";
 import "react-loading-skeleton/dist/skeleton.css";
 import { TbPokeball } from "react-icons/tb";
@@ -25,7 +29,7 @@ const HomeCards = () => {
 
   const pokemonId = (id) => {
     return formatPokemonId(id);
-  }
+  };
 
   return (
     <ul className="ul-home-cards">
@@ -40,7 +44,9 @@ const HomeCards = () => {
               onMouseLeave={() => setIsHovered(false)}
             >
               <div className="text-cards-container">
-                <p className="bold-text">{capitalizeFirstLetter(pokemon.name)}</p>
+                <p className="bold-text">
+                  {capitalizeFirstLetter(pokemon.name)}
+                </p>
                 <p className="">{formatedTypes(pokemon.types)}</p>
                 <p className="">{pokemonId(pokemon.id)}</p>
               </div>
